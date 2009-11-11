@@ -19,6 +19,7 @@
     <div class="content">
       <?php
         if (isset($_POST['email']) && $_POST['email'] !='') {
+          # Processes the form if the email has been entered (see below)
           $response = process_submited_form();
         }
       ?>
@@ -82,28 +83,43 @@
 
 <?php
   function process_submited_form() {
-    # Setup the headers
-    $headers = array(
+
+    # Who's going to receive this email.
+    # The $to field can have the following formats:
+    #
+    # String:  
+    #   $to = 'myemail@somewhere.com';
+    #
+    # Array:   
+    #   $to = array('myemail@somewhere.com', 'youremail@somewhere.com', ...)
+    #
+    # Array with variables:
+    #   $to = array(
+    #     'myemail@somewhere.com'   => array('name' => 'John Smith', ...),
+    #     'youremail@somewhere.com' => array('name' => 'Ann Johnson', ...),
+    #     ...
+    #   )
+    $to = array($_POST['email'] => array('name' => $_POST['variable']));
+    
+    # The subject of the message
+    $subject = $_POST['subject'];
+    
+    # Setup some headers
+    $header = array(
       'From'      => 'my_test@somewhere.com',
-      'Reply-to'  => 'my_test@somewhere.com',
-      'Subject'   => $_POST['subject']
+      'Reply-to'  => 'my_test@somewhere.com'
     );
 
-    # Who's going to receive this email
-    $recipients = $_POST['email'];
-
-    # The content of the message
-    $message = array(
+    # The body of the message
+    $mail_body = array(
       'text/plain' => $_POST['plain_text_content'],
       'text/html' => $_POST['html_text_content']
-  
     );
   
-    # Some variables
-    $variables = array('name' => $_POST['variable']);
-
     # Send it all
-    $response = Postage::send_message($message, $recipients, $variables, $headers);
+    $response = PostageApp::mail($to, $subject, $mail_body, $header);
+    
+    # Analyze the response
     if ($response->response->status == 'ok') {
       echo '<div class="flash_message notice">Your message has been sent. Check your project in PostageApp</div>';
     } else {

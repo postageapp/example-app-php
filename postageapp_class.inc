@@ -1,23 +1,24 @@
 <?php
   require_once('postageapp_conf.inc');
   
-  class Postage
+  
+  class PostageApp
   {
     // Sends a message to Postage App
-    function send_message($message, $recipients, $variables=NULL, $headers=NULL) {
+    function mail($recipient, $subject, $mail_body, $header, $variables=NULL) {
       $content = array(
-        'recipients'  => $recipients,
+        'recipients'  => $recipient,
+        'headers'     => array_merge($header, array('Subject' => $subject)),
         'variables'   => $variables,
-        'headers'     => $headers,
         'uid'         => time()
       );
-      if (is_string($message)) {
-        $content['message_name'] = $message;
+      if (is_string($mail_body)) {
+        $content['message_name'] = $mail_body;
       } else {
-        $content['message'] = $message;
+        $content['message'] = $mail_body;
       }
       
-      return Postage::post(
+      return PostageApp::post(
               'send_message', 
               json_encode(
                 array(
