@@ -13,9 +13,9 @@
         'uid'         => time()
       );
       if (is_string($mail_body)) {
-        $content['message_name'] = $mail_body;
+        $content['template'] = $mail_body;
       } else {
-        $content['message'] = $mail_body;
+        $content['content'] = $mail_body;
       }
       
       return PostageApp::post(
