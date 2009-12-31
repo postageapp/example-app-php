@@ -28,14 +28,19 @@
       <div class="left_column">
         <?php
           if (POSTAGE_API_KEY == 'ENTER YOUR API KEY HERE') {
-            echo "<p>Before sending a message you'll need to add your API key to  postageapp_conf.inc and restart your server.</p>";
+            echo '
+              <p class="warning">
+                <img src="images/bullet_error.png" />
+                Before sending a message you\'ll need to add your API key to  postageapp_conf.inc and restart your server.
+              </p>
+            ';
           } else {
             echo '<p>Your API key is: <span class="api_key">'.POSTAGE_API_KEY.'</span></p>';
           }
         
         ?>
         <p>
-          Enter a subject, your email address and a value for the {{name}} variable.
+          Enter a subject, your email address and a value for the <span class="variable">{{name}}</span> variable.
         </p>
         
         <?php
@@ -56,7 +61,7 @@
         <form method="post">
           <p><label>Subject:</label> <input type="text" value="My name is {{name}}" name="subject"/></p>
           <p><label>My email address:</label> <input type="text" name="email"/></p>
-          <p><label>{{name}} variable:</label> <input type="text" name="variable"/></p>
+          <p><label><span class="variable">{{name}}</span> variable:</label> <input type="text" name="variable"/></p>
           <p>
             <label>Plain text content:</label>
             <br/>

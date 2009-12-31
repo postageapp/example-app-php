@@ -36,6 +36,10 @@ a {
 a:hover {
   text-decoration: underline;
 }
+span.variable {
+  color: #EF720E;
+  font-weight: bold;
+}
 
 .content_wrap {
   width: 800px;
@@ -105,6 +109,16 @@ a:hover {
   float: left;;
   width: 370px;
 }
+.left_column p.warning{
+  background: url(../images/warning_bg.gif) top left repeat-x;
+  padding: 10px;
+  border: solid #ddd 1px;
+}
+.left_column p.warning img{
+  float: left;
+  padding-right: 5px;
+}
+
 .left_column span.api_key{
   background: #33aa33;
   color: #fff;
