@@ -1,181 +1,68 @@
-html, body, div, span {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  font-weight: normal;
-}
-
 body {
-  margin: 10px;
-  background: #ddd;
-  font: 13px lucida grande, clean, sans-serif;
-  _font-size: small;
-  _font: x-small;
+  background-color: #E8F0F9;
+  font: 13px Arial, sans-serif;
 }
-
-h1, h2, h3, h4 {
-  color: #000;
-  font-size: 20px;
-  margin-bottom: 5px;
-  font-family: arial;
+.body_wrapper {
+  width: 550px;
+  padding: 25px;
+  margin: auto;
+  background: #fff url(../images/postageapp.gif) bottom right no-repeat;
+  border: 3px solid #000;
 }
-
-
-p {
-  color: #4d4d4d;
+h1 {
+  margin: -25px -25px 25px -25px;
+  padding: 0px 25px;
+  font: 16px/45px Georgia, serif;
+  background: #000 url(../images/header.gif) bottom repeat-x;
+  color: #fff;
 }
-
-a {
-  color: #00974B;
+.api_key, form, .response {
+  border: 1px solid #e5e5e5;
+  padding: 5px;
+  margin-bottom: 25px;
+  background-color: #eee;
+}
+.api_key span {
+  font-weight: bold;
+}
+.response {
+  background-color: #EDF5FB;
+}
+.response pre {
+  font-size: 11px;
+  padding: 5px;
+  border: 1px dashed #e5e5e5;
+  background-color: #fff;
+}
+form {
+  margin-bottom: 50px;
+}
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+form label input, form label textarea {
+  display: block;
+  width: 480px;
+  margin: 5px 0px 0px 25px;
+}
+form label textarea {
+  height: 75px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  display: inline;
+  margin-right: 10px;
+}
+ul li a {
+  color: #004B97;
   text-decoration: none;
 }
-a:hover {
+ul li a:hover {
   text-decoration: underline;
-}
-span.variable {
-  color: #EF720E;
-  font-weight: bold;
-}
-
-.content_wrap {
-  width: 800px;
-  margin: auto;
-  overflow: hidden;
-}
-
-/* --- Header --- */
-.header {
-  background: #eee;
-  padding: 10px;
-  border-left: solid #aaa 3px;
-  border-top: solid #aaa 3px;
-  border-right: solid #aaa 3px;
-  position: relative;
-}
-.header img{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-.header h1{
-  font-family: Georgia,Serif;
-  margin: 0;
-  color: #4d4d4d;
-  font-size: 24px;
-}
-.header h1 a.small {
-  font-size: 9px;
-  line-height: 15px;
-  font-family: arial;
-  text-transform: uppercase;
-  color: #4d4d4d;
-  font-weight: normal;
-}
-.header p {
-  margin: 0;
-}
-
-.header .login {
-  float: right;
-}
-
-/* --- Content --- */
-
-.content {
-  background: #fff;
-  padding: 10px 10px 50px 10px;
-  border-left: solid #aaa 3px;
-  border-bottom: solid #aaa 3px;
-  border-right: solid #aaa 3px;
-  overflow: hidden;
-  padding-top: 5px;
-}
-
-.content h1 {
-  text-align: center;
-  color: #333;
-}
-.content h2 {
-  font-size: 14px;
-  margin-bottom: 1em;
-  color: #333;
-}
-
-.left_column {
-  float: left;;
-  width: 370px;
-}
-.left_column p.warning{
-  background: url(../images/warning_bg.gif) top left repeat-x;
-  padding: 10px;
-  border: solid #ddd 1px;
-}
-.left_column p.warning img{
-  float: left;
-  padding-right: 5px;
-}
-
-.left_column span.api_key{
-  background: #33aa33;
-  color: #fff;
-  padding: 2px 5px;
-  font-size: 11px;
-}
-
-.left_column .response {
-  border: solid #ddd 2px;
-  padding: 5px;
-  overflow: auto;
-}
-.left_column .response p {
-  font-size: 11px;
-  font-weight: bold;
-  margin: 0px;
-  text-transform: uppercase;
-}
-
-.left_column .response .debug_dump {
-  font-size: 11px;
-  
-}
-.right_column {
-  float: right;
-  width: 350px;
-}
-
-/* --- Footer --- */
-
-.footer {
-  background: #aaa;
-  color: #fff;
-  font-size: 9px;
-  text-align: right;
-  line-height: 20px;
-  padding: 0 10px 5px 0;
-}
-
-/* --- Flash messages --- */
-
-.flash_message {
-  padding: 5px 20px;
-  font: 14px Georgia, serif;
-}
-.flash_message.notice {
-  background: #e6f0fa;
-}
-
-.flash_message.error {
-  background: #B70008;
-  color: #fff;
-}
-
-/* --- Forms --- */
-label {
-  width: 120px;
-  float: left;
-  font-size: 11px;
 }

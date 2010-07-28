@@ -1,7 +1,0 @@
-= PostageApp: Php example
- 
-Author:: {The Working Group, Inc}[http://www.theworkinggroup.ca]
-Version:: 1.0.0
-Documentation:: {http://postageapp.com/docs/php}[http://postageapp.com/docs/php]
- 
-This is a working Php app that shows how to send mass emails through {PostageApp}[http://postageapp.com]

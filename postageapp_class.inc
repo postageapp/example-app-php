@@ -19,14 +19,14 @@
       }
       
       return PostageApp::post(
-              'send_message', 
-              json_encode(
-                array(
-                  'api_key' => POSTAGE_API_KEY, 
-                  'arguments' => $content
-                )
-              )
-             );
+        'send_message', 
+        json_encode(
+          array(
+            'api_key' => POSTAGE_API_KEY, 
+            'arguments' => $content
+          )
+        )
+      );
     }
     
     // Makes a call to the Postage App API
