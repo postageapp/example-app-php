@@ -14,4 +14,4 @@ Configuration
 Questions / Comments?
 ---------------------
 
-Please visit [help.postageapp.com](http://postageapp.com)
+Please visit [http://help.postageapp.com](http://help.postageapp.com)
