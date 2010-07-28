@@ -35,7 +35,10 @@
       curl_setopt($ch, CURLOPT_POSTFIELDS,  $content);
       curl_setopt($ch, CURLOPT_HEADER, false);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-      curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));   
+      curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        'User-Agent: PostageApp PHP ' . phpversion()
+      ));   
       curl_setopt($ch, CURLOPT_POST, 1);
       curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
       $output = curl_exec($ch);
