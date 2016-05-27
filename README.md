@@ -15,3 +15,7 @@ Questions / Comments?
 ---------------------
 
 Please visit [http://help.postageapp.com](http://help.postageapp.com)
+
+###To deploy your App 
+[![img](https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA2.png)](https://console.megamafrica.com)
+
