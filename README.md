@@ -1,17 +1,16 @@
-PHP Example Application for PostageApp
-======================================
+# PHP Example Application for PostageApp
 
-A quick example on how to integrate [PostageApp](http://postageapp.com) email delivery with PHP application
+A quick example on how to integrate [PostageApp](https://postageapp.com) email
+delivery with a sample PHP application
 
+## Configuration
 
-Configuration
--------------
+1. Sign up with [PostageApp](https://secure.postageapp.com/register)
+2. Create a new project or use the existing default.
+3. Copy the given API key into `postageapp_conf.inc`
+4. Ready to send mail!
 
-1. Sign up with [PostageApp](http://postageapp.com)
-2. Create a Project (optionally attach it to a mail server)
-3. Copy API KEY into postageapp_conf.inc
+## Documentation
 
-Questions / Comments?
----------------------
-
-Please visit [http://help.postageapp.com](http://help.postageapp.com)
+Please visit [the developer site](https://dev.postageapp.com/api/) for full
+API documentation.

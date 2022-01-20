@@ -1,15 +1,14 @@
-<?php 
+<?php
   require_once('postageapp_class.inc');
-  
+
   function process_submited_form() {
-    
     # Who's going to receive this email.
     # The $to field can have the following formats:
     #
-    # String:  
+    # String:
     #   $to = 'myemail@somewhere.com';
     #
-    # Array:   
+    # Array:
     #   $to = array('myemail@somewhere.com', 'youremail@somewhere.com', ...)
     #
     # Array with variables:
@@ -19,34 +18,34 @@
     #     ...
     #   )
     $to = array($_POST['email'] => array('name' => $_POST['variable']));
-    
+
     # The subject of the message
     $subject = $_POST['subject'];
-    
+
     # Setup some headers
     $header = array(
       'From'      => 'my_test@somewhere.com',
       'Reply-to'  => 'my_test@somewhere.com'
     );
-    
+
     # The body of the message
     $mail_body = array(
       'text/plain' => $_POST['plain_text_content'],
       'text/html' => $_POST['html_text_content']
     );
-    
+
     # Send it all
     $response = PostageApp::mail($to, $subject, $mail_body, $header);
     return $response;
   }
-  
+
   if (isset($_POST['email']) && $_POST['email'] !='') {
     # Processes the form if the email has been entered (see below)
     $response = process_submited_form();
   }
-  
+
   $api_key = (POSTAGE_API_KEY == 'ENTER YOUR API KEY HERE') ? null : POSTAGE_API_KEY
-  
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -57,13 +56,13 @@
     <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen" charset="utf-8" />
     <title>PHP Example Application for PostageApp</title>
   </head>
-  
+
   <body>
     <div class='body_wrapper'>
-      <h1> 
+      <h1>
         PHP Example Application for PostageApp
       </h1>
-      
+
       <div class="api_key">
         <?php if($api_key){ ?>
           API KEY: <span><?= $api_key ?></span>
@@ -71,13 +70,13 @@
           Please insert your project API KEY in <span>postageapp_conf.inc<span>
         <?php } ?>
       </div>
-      
+
       <?php if($response){ ?>
         <div class='response'>
           <pre><?= print_r ($response); ?></pre>
         </div>
       <?php } ?>
-      
+
       <form method="post">
         <label> Subject
           <input type="text" value="Hello {{name}}" name="subject"/>
@@ -100,10 +99,10 @@ This is a test
         </label>
         <input type="submit" value="Send Message" name="commit"/>
       </form>
-      
+
       <ul>
-        <li><a href='http://postageapp.com'>PostageApp</a></li>
-        <li><a href='http://help.postageapp.com'>PostageApp Help Portal</a></li>
+        <li><a href='https://postageapp.com/'>PostageApp</a></li>
+        <li><a href='https://dev.postageapp.com/'>PostageApp Developer Portal</a></li>
       </ul>
     </div>
   </body>
